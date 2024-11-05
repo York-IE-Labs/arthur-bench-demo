@@ -1,0 +1,7 @@
+CONTEXT:
+{context}
+
+USER QUERY:
+{user_query}
+
+ANSWER:
