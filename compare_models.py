@@ -174,8 +174,7 @@ def main() -> bool:
 
         logger.info(f"Loading input data")
 
-        input_data = load_jsonlines(DATA_FOLDER / "inputs.jsonl")
-        input_records = list(map(Record.parse_obj, input_data))
+        input_records = load_records(DATA_FOLDER / "inputs.jsonl")
         bedrock = boto3.client('bedrock-runtime', config=botocore.config.Config(region_name="us-west-2"))
 
         input_text_list = list()
