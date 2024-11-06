@@ -1,6 +1,0 @@
-arthur-bench[server]
-boto3
-jsonlines
-openai~=0.27
-pydantic>=1.7.4,<2.0,!=1.8,!=1.8.1
-
