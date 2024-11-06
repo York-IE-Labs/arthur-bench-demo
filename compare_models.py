@@ -158,10 +158,6 @@ def call_llama(client: boto3.client, model_id: str, record: Record, model_kwargs
     return r['generation']
 
 
-
-
-
-
 SYSTEM_MESSAGE = load_prompt(PROMPT_FOLDER / "system.txt")
 USER_TEMPLATE = load_prompt(PROMPT_FOLDER / "user.txt")
 LLAMA_TEMPLATE = load_prompt(PROMPT_FOLDER / "llama_template.txt")
@@ -184,6 +180,8 @@ def main() -> bool:
         claude_summaries = list()
         llama_summaries = list()
         openai_summaries = list()
+
+        logger.info(f"Generating candidate responses")
 
         for record in input_records:
             input_text_list.append(record.user_query)
