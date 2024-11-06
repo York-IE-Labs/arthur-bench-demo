@@ -75,6 +75,7 @@ def load_prompt(p: pathlib.Path) -> str:
         prompt = f_in.read()
     return prompt
 
+
 def fill_user_template(record: Record) -> str:
     return USER_TEMPLATE.format(
         context=record.context.strip(),
@@ -85,7 +86,6 @@ def fill_user_template(record: Record) -> str:
 def call_openai(record: Record, **kwargs) -> str:
     """
     Calls OpenAI chat completion endpoint given a Record record
-    :param client:
     :param record:
     :param kwargs: passed to client.chat.completions.create
     :return: chat completion text
